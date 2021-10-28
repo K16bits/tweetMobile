@@ -24,6 +24,7 @@ export const styled = StyleSheet.create({
         alignItems:'center'
     },
     input:{
+        fontFamily:theme.fonts.font400,
         color:'black',
         width:widthScreen*0.5,
         fontSize:22,

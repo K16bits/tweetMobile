@@ -17,6 +17,10 @@ export const styled = StyleSheet.create({
         padding:10,
         margin:2,
     },
+    headMessage:{
+        flexDirection:'row',
+        justifyContent:'space-between'
+    },
     username:{
         fontSize:20,
         fontFamily:theme.fonts.font500,
@@ -24,7 +28,7 @@ export const styled = StyleSheet.create({
     },
     text:{
         color:'white',
-        fontSize:22,
-        fontFamily:theme.fonts.font500,
+        fontSize:18,
+        fontFamily:theme.fonts.font400,
     }
 })

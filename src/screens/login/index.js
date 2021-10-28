@@ -3,7 +3,6 @@ import { styled } from './styles'
 import { AntDesign } from '@expo/vector-icons';
 import {Text,View,TextInput,Button} from 'react-native'
 
-
 export default function Login({ navigation }){
     return(
         <View style={styled.container}>
@@ -14,12 +13,12 @@ export default function Login({ navigation }){
                     Wellcome to tweet 
                 </Text>
                 <TextInput style={styled.input} placeholder="Email"/>
-                <TextInput style={styled.input} placeholder="Password"/>
+                <TextInput style={styled.input} placeholder="Password" secureTextEntry={true}/>
                 <Button title="login" color="#2196F3"
                     onPress={()=>{
                         navigation.navigate('Home')}
                 }/>
-            </View>
+            </View>      
         </View>
     )
 }
