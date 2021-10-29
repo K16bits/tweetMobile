@@ -1,21 +1,25 @@
 import React from 'react'
-import {Text,View} from 'react-native'
+import {Text,View,FlatList} from 'react-native'
 import {styled} from './styles'
 import {data} from './data'
 
 export default function Home(){
     return(
         <View style={styled.container}>
-                {
-                    data.map((data)=>(
-                        <View style={styled.messageContainer} key={data.nome}>
-                            <View style={styled.headMessage}>
-                                <Text style={styled.username}>@{data.nome}</Text>
-                                <Text style={styled.username}>{data.data}</Text>
-                            </View> 
-                            <Text style={styled.text}>{data.texto}</Text>
-                        </View>
-                    ))
+            <Text style={styled.title}>weet</Text>
+            <FlatList
+                data={data}
+                keyExtractor={(item)=>item.nome}
+                renderItem = {({item})=>(
+                    <View style={styled.messageContainer}>
+                        <View style={styled.headMessage}>
+                            <Text style={styled.username}>@{item.nome}</Text>
+                            <Text style={styled.username}>{item.data}</Text>
+                        </View> 
+                    <Text style={styled.text}>{item.texto}</Text>
+                    </View>
+                )
                 }
+            />
         </View>
     )} 
