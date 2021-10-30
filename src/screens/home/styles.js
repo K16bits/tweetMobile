@@ -12,8 +12,8 @@ export const styled = StyleSheet.create({
         alignItems:'center',
     },
     messageContainer:{
-        borderWidth:1,
-        borderColor:"red",
+        borderWidth:0.5,
+        borderColor:"white",
         width:widthScreen,
         padding:10,
         margin:2,

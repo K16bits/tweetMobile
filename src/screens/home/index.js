@@ -6,7 +6,7 @@ import {data} from './data'
 export default function Home(){
     return(
         <View style={styled.container}>
-            <Text style={styled.title}>weet</Text>
+            <Text style={styled.title}>tweet</Text>
             <FlatList
                 data={data}
                 keyExtractor={(item)=>item.nome}
