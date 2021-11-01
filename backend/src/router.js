@@ -1,8 +1,7 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
+const crud = require('./controllers/crud');
 
-router.get("/",(req,res)=>{
-    res.send("aaaaaa")
-})
+router.post("/",crud.store)
 
 module.exports = router;

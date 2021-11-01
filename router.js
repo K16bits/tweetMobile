@@ -38,7 +38,7 @@ function MyTabs() {
     );
 }
 
-const control = true;
+const control = false;
 
 function Router(){
     return(

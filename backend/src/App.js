@@ -1,11 +1,14 @@
 const express = require('express');
-const router = express.Router();
+const router = require('./router')
+const cors = require('cors')
+
 
 class App {
     constructor(){
         this.app = express();
         this.app.use(express.json());
-        this.app.Router;
+        this.app.use(cors())
+        this.Router();
     }
     Router(){
         this.app.use(router)
@@ -13,3 +16,4 @@ class App {
 }
 
 module.exports = new App().app;
+
