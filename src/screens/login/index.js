@@ -11,15 +11,17 @@ export default function Login({ navigation }){
 
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
-
     const data = {
         name:email,
         password
     }
 
     async function SubmitData(){
-        const dados = await api.post('/',data)
-        .then(response =>{ console.log(response)}).catch(erro=>{
+        const dados = await api.post('/login',data)
+        .then(response =>{
+             console.log(response.data)
+        })
+        .catch(erro=>{
             console.log(erro)
         })
     }
@@ -30,7 +32,7 @@ export default function Login({ navigation }){
                     <AntDesign
                     name="message1" color="white" size={60}/>
                 <Text style={styled.text}>
-                    Wellcome to tweet 
+                    Wellcome to tweet
                 </Text>
                 <TextInput style={styled.input} placeholder="Email"
                     onChangeText={(e)=> setEmail(e)}
