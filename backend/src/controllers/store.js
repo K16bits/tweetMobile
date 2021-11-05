@@ -10,6 +10,11 @@ module.exports = {
             return res.status(401).json({"status":"falta de nome ou senha"})
         }
 
+        const data = await knex('users').where('email',name).first();
+        if(data){
+            return res.status(409).json({"status":"Email já cadastrado"})
+        }
+
         const hashPassword = bcrypt.hashSync(password,parseInt(process.env.SALTROUNDS));
 
         await knex('users').insert({
@@ -19,6 +24,6 @@ module.exports = {
             console.log(erro);
         })
         
-        return res.status(200).json({"status":"usuario criado com sucesso"})
+        return res.status(201).json({"status":"usuario criado com sucesso"})
     }
 }
