@@ -8,6 +8,8 @@ import {
   Inconsolata_900Black
 } from '@expo-google-fonts/inconsolata'
 
+import { AuthProvider } from './src/contexts/auth';
+
 export default function App() {
   const [fontsLoaded] = useFonts({
     Inconsolata_400Regular,
@@ -20,6 +22,8 @@ export default function App() {
   }
   
   return (
+    <AuthProvider>
       <Router/>
+    </AuthProvider>
   );
 }

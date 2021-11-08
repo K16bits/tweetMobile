@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -8,7 +8,6 @@ import Friends from './src/screens/Friends';
 
 import {Ionicons, AntDesign} from '@expo/vector-icons';
 import theme from './src/themes/theme';
-
 const color = theme.icon.color1
 
 const Tab = createBottomTabNavigator()
@@ -38,12 +37,12 @@ function MyTabs() {
     );
 }
 
-const control = false;
 
 function Router(){
-    return(
+  const userLogin = false
+  return(
         <NavigationContainer >
-            {control ? <MyTabs/> : <Login/>}
+              {userLogin ? <MyTabs/> : <Login/>}
         </NavigationContainer>
     );
 }

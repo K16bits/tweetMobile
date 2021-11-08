@@ -7,19 +7,33 @@ import {Text,View,TextInput,Button} from 'react-native'
 
 import {api} from '../../services/api'
 
-export default function Login({ navigation }){
+import {useNavigationContainerRef} from '@react-navigation/native'
+
+import {useAuth} from '../../contexts/auth'
+
+export default function Login(){
+    const {teste } = useAuth()
+    console.log( teste)
+
+    const navigationRef  = useNavigationContainerRef()
 
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
+
     const data = {
         name:email,
         password
     }
 
     async function SubmitData(){
+
+        const {loginUser} = useAuth();
+
         const dados = await api.post('/login',data)
         .then(response =>{
-             console.log(response.data)
+            console.log('em manuntenção navigate')
+            console.log(nome)
+            //navigationRef.navigate('Friends')
         })
         .catch(erro=>{
             console.log(erro)
